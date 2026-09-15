@@ -1,0 +1,131 @@
+:root {
+  --bg: #14100e;
+  --bg-panel: #1e1815;
+  --ember: #e0742a;
+  --ember-bright: #ff9a4d;
+  --text: #f2e9e2;
+  --text-dim: #b3a89f;
+  --border: #33281f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #241a14 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: 0.03em;
+  background: linear-gradient(180deg, var(--ember-bright), var(--ember));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero .tagline {
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+main {
+  flex: 1;
+  padding: 0 1.5rem 3rem;
+}
+
+.project-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  display: block;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:not(.card--placeholder):hover {
+  border-color: var(--ember);
+  transform: translateY(-2px);
+}
+
+.card--placeholder {
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.card .tagline {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin: 0.6rem 0;
+}
+
+.stack {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.badge {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.badge--active {
+  background: rgba(224, 116, 42, 0.15);
+  color: var(--ember-bright);
+}
+
+.badge--planned {
+  background: rgba(179, 168, 159, 0.12);
+  color: var(--text-dim);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
